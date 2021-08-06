@@ -23,5 +23,6 @@ public class Q14681 {
                 System.out.println("3");
             }
         }
+        scan.close();
     }
 }
