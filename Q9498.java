@@ -23,3 +23,4 @@ public class Q9498 {
 
         scan.close();
     }
+}
