@@ -24,5 +24,6 @@ public class Q14681 {
             }
         }
         scan.close();
+        
     }
 }
