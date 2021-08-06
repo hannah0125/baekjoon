@@ -15,5 +15,6 @@ public class Q10430 {
 		System.out.println(((a % c) * (b % c))% c);
 		
 		scan.close();
+		
 	}
 }
