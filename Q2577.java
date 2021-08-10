@@ -21,6 +21,6 @@ public class Q2577 {
             }
             System.out.println(count);
         }
-
+        scan.close();
     }
 }
