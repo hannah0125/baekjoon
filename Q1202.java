@@ -51,6 +51,7 @@ public class Q1202 {
 
             if (!pq.isEmpty()) ans = ans + Math.abs(pq.poll());
         }
+        scan.close();
         
         System.out.println(ans);
     }
