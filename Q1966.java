@@ -4,16 +4,17 @@ import java.io.*;
 public class Q1966 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+        StringTokenizer st; 
 
         int CASE = Integer.parseInt(br.readLine());
 
-        for (int j = 0; j < CASE; j++) {
+        for (int j = 1; j <= CASE; j++) {
             st = new StringTokenizer(br.readLine());
 
             int n = Integer.parseInt(st.nextToken());
             int idx = Integer.parseInt(st.nextToken());
             int num = 0;
+            int idxnum = 0;
     
             st = new StringTokenizer(br.readLine());
     
@@ -21,9 +22,11 @@ public class Q1966 {
             Queue<Integer> q2 = new LinkedList<>();
     
             for (int i = 0; i < n; i++) {
-                q.add(Integer.parseInt(st.nextToken()));
+                int NUM = Integer.parseInt(st.nextToken());
+                q.add(NUM);
                 if (i == idx) {
-                    q2.add(q.peek());
+                    q2.add(NUM);
+                    idxnum = NUM;
                 }
                 else{
                     q2.add(10000);
@@ -32,21 +35,20 @@ public class Q1966 {
     
             while(!q.isEmpty()) {
                 boolean ox = true;
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < q.size(); i++) {
                     if(q.peek() < q.get(i)) {
                         ox = false;
                         break;
                     }
                 }
-    
-                if (ox == false) {
+                if (!ox) {
                     q.add(q.poll());
                     q2.add(q2.poll());
                 }
                 else{
                     q.poll();
                     num++;
-                    if(q2.peek() == idx) {
+                    if(q2.peek() == idxnum) {
                         System.out.println(num);
                     }
                     q2.poll();
